@@ -18,6 +18,7 @@
   <arg name="respawn_gazebo" default="false"/>
   <arg name="use_clock_frequency" default="false"/>
   <arg name="pub_clock_frequency" default="100"/>
+  <arg name="robot_model" default="$(find os1_64_bauzil)/urdf/robot.urdf.xacro"/>
 
   <!-- set parameters -->
   <param name="/use_sim_time" value="$(arg use_sim_time)"/>
@@ -44,14 +45,18 @@
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="$(arg output)" args="$(arg command_arg3)"/>
   </group>
 
-  <!-- Spawner for the bauzil room --> -->
+  <!-- Spawner for the bauzil room -->
   <node name="bauzil_spawn_urdf" pkg="gazebo_ros" type="spawn_model"
     respawn="false" output="screen"
     args="-file $(find os1_64_bauzil)/sdf/bauzil_room.sdf -sdf -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0 -model bauzil_room"/>
 
-  <!-- Spawner for the sensor -->
-  <node name="os1_64_spawn_urdf" pkg="gazebo_ros" type="spawn_model"
-    respawn="false" output="screen"
-    args="-file $(find os1_64_bauzil)/sdf/os1_64.sdf -sdf -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0 -model os1_64"/>
+  <!-- Spawner for the sensor/robot -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg robot_model)'"/>
+  <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -x 1 -y 1 -z 0 -model robot"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node>
 
+  <!-- start rviz for data visualization -->
+  <node name="rviz_os_1_64_bauzil" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(find os1_64_bauzil)/rviz/simple.rviz"/>
 </launch>

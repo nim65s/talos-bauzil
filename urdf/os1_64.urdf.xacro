@@ -2,9 +2,10 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="os1_64">
   <xacro:property name="PI" value="3.1415926535897931"/>
 
-  <xacro:macro name="OS1-64" params="*origin parent:=base_link name:=ouster topic:=/points hz:=10 samples:=512 min_range:=0.8 max_range:=100 noise:=0.008 min_angle_v:=-16.6 max_angle_v:=16.6">
+  <xacro:macro name="os1_64" params="*origin parent:=base_link name:=ouster topic:=/points hz:=10 samples:=512 min_range:=0.8 max_range:=100 noise:=0.008 min_angle_v:=-16.6 max_angle_v:=16.6">
 
     <joint name="${name}_base_mount_joint" type="fixed">
+      <xacro:insert_block name="origin" /> 
       <parent link="${parent}"/>
       <child link="${name}"/>
     </joint>
@@ -23,9 +24,9 @@
         </geometry>
       </collision>
       <visual name="base_visual">
-        <origin xyz="0 0 -0.03675" rpy="0 0 0" />
+        <origin xyz="0 0 -0.03675" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://os1_64_bauzil/sdf_data/os1_64.stl" />
+          <mesh filename="package://os1_64_bauzil/sdf/data/os1_64.stl"/>
         </geometry>
       </visual>
     </link>
@@ -40,14 +41,14 @@
             <vertical>
               <samples>64</samples>
               <resolution>1</resolution>
-              <min_angle>-${min_angle_v*M_PI/180.0}</min_angle>
-              <max_angle> ${max_angle_v*M_PI/180.0}</max_angle>
+              <min_angle>${min_angle_v*PI/180.0}</min_angle>
+              <max_angle>${max_angle_v*PI/180.0}</max_angle>
             </vertical>
             <horizontal>
               <samples>${samples}</samples>
               <resolution>1</resolution>
-              <min_angle>-${M_PI}</min_angle>
-              <max_angle>${M_PI}</max_angle>
+              <min_angle>-${PI}</min_angle>
+              <max_angle>${PI}</max_angle>
             </horizontal>
           </scan>
           <range>
