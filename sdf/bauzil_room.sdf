@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="bauzil_room">
+    <static>true</static>
+    <link name="body">
+      <collision name="bauzil_room_collision">
+        <geometry>
+          <mesh>
+            <uri>model://sdf/data/bauzil_room.stl</uri> <!-- work if <env [] /> command is in the roslaunch -->
+            <!-- <uri>file://data/bauzil_room.stl</uri> --> <!-- Should look for the files in the local directory but is not working -->
+            <!-- <uri>model://bauzil_room/meshes/bauzil_room.stl</uri> --> <!-- If the model is in ~/.gazebo/models -->
+            <!-- <uri>package://os1_64_bauzil/sdf/data/bauzil_room.stl</uri> --> <!-- Should go to ROS pkg but is not working -->
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="bauzil_room_visual">
+        <geometry>
+          <mesh>
+            <uri>model://sdf/data/bauzil_room.stl</uri> <!-- work if <env [] /> command is in the roslaunch -->
+            <!-- <uri>file://data/bauzil_room.stl</uri> --> <!-- Should look for the files in the local directory but is not working -->
+            <!-- <uri>model://bauzil_room/meshes/bauzil_room.stl</uri> --> <!-- If the model is in ~/.gazebo/models -->
+            <!-- <uri>package://os1_64_bauzil/sdf/data/bauzil_room.stl</uri> --> <!-- Should go to ROS pkg but is not working -->
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

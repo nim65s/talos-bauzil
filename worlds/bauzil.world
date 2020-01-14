@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+
+  <world name="alone_world">
+
+      <!-- A global light source -->
+      <include>
+        <uri>model://sun</uri>
+      </include>
+
+      <!-- A ground plane -->
+      <include>
+        <uri>model://ground_plane</uri>
+      </include>
+
+      <model name="os1_64">
+        <include>
+          <uri>model://sdf/os1_64.sdf</uri>
+        </include>
+        <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_ouster_laser.so">
+          <topicName>/os1_64/scans</topicName>
+          <frameName>robot_frame</frameName>
+          <min_range>0.8</min_range>
+          <max_range>120</max_range>
+          <gaussianNoise>0</gaussianNoise>
+        </plugin>
+      </model>
+
+      <model name="bauzil_room">
+        <include>
+          <uri>model://sdf/bauzil_room.sdf</uri>
+        </include>
+      </model>
+  </world>
+</sdf>

@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="OUSTER_1_64">
+    <link name="sensor_body">
+      <!-- Offset the base by half the lenght of the cylinder -->
+      <pose>0 0 0.03675 0 0 0</pose>
+
+      <inertial>
+        <mass>0.425</mass>
+        <inertia>
+          <ixx>0.000308429</ixx>
+          <iyy>0.000308429</iyy>
+          <izz>0.00034589</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="base_collision">
+        <geometry>
+          <cylinder>
+            <!-- Radius and length provided by OUSTER -->
+            <radius>0.04350</radius>
+            <length>0.07350</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="base_visual">
+        <pose> 0 0 -0.03675 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://sdf/data/os1_64.stl</uri> <!-- work if <env [] /> command is in the roslaunch -->
+            <!-- <uri>model://os1_64/meshes/sensor.stl</uri> --> <!-- If the model is in ~/.gazebo/models -->
+            <!-- <uri>package://os1_64_bauzil/sdf/data/os1_64.stl</uri> --> <!-- Should go to ROS pkg but is not working -->
+          </mesh>
+        </geometry>
+      </visual>
+
+      <sensor type="ray" name="sensor_sensor">
+        <visualize>true</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <noise>
+            <!-- Use gaussian noise -->
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+          <scan>
+            <vertical>
+              <samples>64</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.2792527</min_angle>
+              <max_angle> 0.2792527</max_angle>
+            </vertical>
+            <horizontal>
+              <samples>512</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>6.283185307</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.8</min>
+            <max>120</max>
+            <resolution>0.03</resolution>
+          </range>
+        </ray>
+      </sensor>
+    </link>
+  </model>
+</sdf>
