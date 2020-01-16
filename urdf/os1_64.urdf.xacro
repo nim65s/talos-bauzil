@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="os1_64">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="os1_64">
   <xacro:property name="PI" value="3.1415926535897931"/>
 
   <xacro:macro name="os1_64" params="*origin parent:=base_link name:=ouster topic:=/points hz:=10 samples:=512 min_range:=0.8 max_range:=100 noise:=0.008 min_angle_v:=-16.6 max_angle_v:=16.6">
