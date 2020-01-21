@@ -63,7 +63,7 @@
   <xacro:include filename="$(find os1_64_bauzil)/urdf/os1_64.urdf.xacro"/>
   <!-- noise:=0.0 means that the noise is calculated according to the datasheet -->
   <os1_64 parent="head_2_link" name="os1" prefix="/os1_cloud_node" hz="10" samples="512" noise="0.0">
-    <origin xyz="0 0 0.312" rpy="0 0 1.570796327"/>
+    <origin xyz="0 0 0.275" rpy="0 0 1.570796327"/>
   </os1_64>
 
 </robot>
