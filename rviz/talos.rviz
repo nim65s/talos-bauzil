@@ -617,7 +617,7 @@ Visualization Manager:
   Global Options:
     Background Color: 90; 90; 90
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: left_sole_link
     Frame Rate: 30
   Name: root
   Tools:
