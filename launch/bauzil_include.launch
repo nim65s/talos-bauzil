@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <!-- This file is based on the examples of the `gazebo_ros` packages. -->
-  <env name="GAZEBO_MODEL_PATH" value="$(find os1_64_bauzil)"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(find os1_64_bauzil)/models"/>
 
   <!-- Arguments we can pass to the launch file. -->
   <arg name="paused" default="false"/>
@@ -14,14 +14,15 @@
   <arg name="physics" default="ode"/>
   <arg name="verbose" default="false"/>
   <arg name="output" default="screen"/>
-  <arg name="world_name" default="$(find os1_64_bauzil)/worlds/bauzil.world"/>
+  <arg name="world_name" default="bauzil"/>
+  <arg name="world_filename" default="$(find os1_64_bauzil)/worlds/$(arg world_name).world"/>
   <arg name="respawn_gazebo" default="false"/>
   <arg name="use_clock_frequency" default="false"/>
   <arg name="pub_clock_frequency" default="100"/>
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="world_name" value="$(arg world_filename)"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
