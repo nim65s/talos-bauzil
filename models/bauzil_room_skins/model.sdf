@@ -16,39 +16,35 @@
       </visual>
     </link>
     <link name="skin_estrade">
-      <pose>-6.73 0 0.63 -0.25 -0.050001 1.249999</pose>
+      <pose>-7 0 0.63 -0.15 0.025 1.55</pose>
       <collision name="skin_estrade_collision">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin-gb.dae</uri>
-            <scale>0.2 0.2 0.2</scale>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </collision>
       <visual name="skin_estrade_visual">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin-gb.dae</uri>
-            <scale>0.2 0.2 0.2</scale>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </visual>
     </link>
     <link name="skin_rap_side">
-      <pose>6.5 -2.9 0.35 -0.4 -0.09 2.85</pose>
+      <pose>6.3 -3.4 0.01 -0.4 0.03 3.14</pose>
       <collision name="skin_estrade_collision">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin-gb.dae</uri>
-            <scale>0.2 0.2 0.2</scale>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </collision>
       <visual name="skin_estrade_visual">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin-gb.dae</uri>
-            <scale>0.2 0.2 0.2</scale>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </visual>
