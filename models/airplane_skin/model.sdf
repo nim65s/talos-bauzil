@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="airplane_skin">
+    <pose>0 0 0  0 0 0</pose>
+    <static>true</static>
+    <link name="skin">
+      <collision name="skin_collision">
+        <geometry>
+          <mesh>
+            <uri>model://airplane_skin/meshes/airplane-skin.stl</uri>
+           </mesh>
+        </geometry>
+      </collision>
+      <visual name="skin_visual">
+        <geometry>
+          <mesh>
+            <uri>model://airplane_skin/meshes/airplane-skin.stl</uri>
+           </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
