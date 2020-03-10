@@ -26,7 +26,7 @@
       <visual name="base_visual">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://os1_64_bauzil/sdf/data/os1_64.stl"/>
+          <mesh filename="package://talos_bauzil/sdf/data/os1_64.stl"/>
         </geometry>
       </visual>
     </link>

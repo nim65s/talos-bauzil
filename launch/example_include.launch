@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <!-- This file is based on the examples of the `gazebo_ros` packages. -->
-  <env name="GAZEBO_MODEL_PATH" value="$(find os1_64_bauzil)"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(find talos_bauzil)"/>
 
   <!-- Arguments we can pass to the launch file. -->
   <arg name="paused" default="false"/>
@@ -14,7 +14,7 @@
   <arg name="physics" default="ode"/>
   <arg name="verbose" default="false"/>
   <arg name="output" default="screen"/>
-  <arg name="world_name" default="$(find os1_64_bauzil)/worlds/alone.world"/>
+  <arg name="world_name" default="$(find talos_bauzil)/worlds/alone.world"/>
   <arg name="respawn_gazebo" default="false"/>
   <arg name="use_clock_frequency" default="false"/>
   <arg name="pub_clock_frequency" default="100"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>os1_64_bauzil</name>
+  <name>talos_bauzil</name>
   <version>0.0.1</version>
   <description>
     Package for the simulation of sensors in the Bauzil room (LAAS).

@@ -21,7 +21,7 @@ time.sleep(1)
 # Get the path to talos_data
 arospack = rospkg.RosPack()
 talos_data_path = arospack.get_path('talos_data')
-talos_bauzil_path = arospack.get_path('os1_64_bauzil')
+talos_bauzil_path = arospack.get_path('talos_bauzil')
 
 # Start talos_gazebo
 rospy.init_node('starting_talos_gazebo', anonymous=True)

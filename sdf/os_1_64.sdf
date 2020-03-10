@@ -33,7 +33,7 @@
           <mesh>
             <uri>model://sdf/data/os1_64.stl</uri> <!-- work if <env [] /> command is in the roslaunch -->
             <!-- <uri>model://os1_64/meshes/sensor.stl</uri> --> <!-- If the model is in ~/.gazebo/models -->
-            <!-- <uri>package://os1_64_bauzil/sdf/data/os1_64.stl</uri> --> <!-- Should go to ROS pkg but is not working -->
+            <!-- <uri>package://talos_bauzil/sdf/data/os1_64.stl</uri> --> <!-- Should go to ROS pkg but is not working -->
           </mesh>
         </geometry>
       </visual>

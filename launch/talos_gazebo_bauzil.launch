@@ -3,7 +3,7 @@
 <launch>
   <arg name="start_half_sitting" default="true"/>
   <arg name="world_name" default="bauzil"/>
-  <arg name="world_filename" default="$(find os1_64_bauzil)/worlds/$(arg world_name).world"/>
+  <arg name="world_filename" default="$(find talos_bauzil)/worlds/$(arg world_name).world"/>
   <arg name="gzpose" default="-x -4.2 -y 0.0 -z 1.21 -R 0.0 -P 0.0 -Y 3.14" unless="$(arg start_half_sitting)"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
@@ -19,7 +19,7 @@
   <arg name="enable_fixed_robot" default="false"/>
   <arg name="default_configuration_type" default="zeros"/>
 
-  <env name="GAZEBO_MODEL_PATH" value="$(find os1_64_bauzil)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(find talos_bauzil)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
   <arg name="left_leg_pose" default="-J leg_left_1_joint 0.0 -J leg_left_2_joint 0.0 -J leg_left_3_joint -0.411354 -J leg_left_4_joint 0.859395 -J leg_left_5_joint -0.448041 -J leg_left_6_joint -0.001708"/>
   <arg name="right_leg_pose" default="-J leg_right_1_joint 0.0 -J leg_right_2_joint 0.0 -J leg_right_3_joint -0.411354 -J leg_right_4_joint 0.859395 -J leg_right_5_joint -0.448041 -J leg_right_6_joint -0.001708"/>
@@ -61,7 +61,7 @@
 
   <!-- start rviz for data visualization -->
   <group if="$(arg viz)">
-    <node name="rviz_os1_64_bauzil" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(find os1_64_bauzil)/rviz/talos.rviz"/>
+    <node name="rviz_talos_bauzil" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(find talos_bauzil)/rviz/talos.rviz"/>
   </group>
 
 </launch>
