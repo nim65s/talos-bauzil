@@ -7,16 +7,22 @@
       <collision name="skin_collision">
         <geometry>
           <mesh>
-            <uri>model://airplane_skin/meshes/airplane-skin.stl</uri>
+            <uri>model://airplane_skin/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </collision>
       <visual name="skin_visual">
         <geometry>
           <mesh>
-            <uri>model://airplane_skin/meshes/airplane-skin.stl</uri>
+            <uri>model://airplane_skin/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
+        <material>
+          <ambient>0.4 0.57 0.52 1</ambient>
+          <diffuse>0.4 0.57 0.52 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
   </model>

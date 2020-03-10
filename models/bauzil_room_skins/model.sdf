@@ -20,14 +20,14 @@
       <collision name="skin_estrade_collision">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin.stl</uri>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </collision>
       <visual name="skin_estrade_visual">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin.stl</uri>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </visual>
@@ -37,14 +37,14 @@
       <collision name="skin_rap_collision">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin.stl</uri>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </collision>
       <visual name="skin_rap_visual">
         <geometry>
           <mesh>
-            <uri>model://bauzil_room_skins/meshes/airplane-skin.stl</uri>
+            <uri>model://bauzil_room_skins/meshes/airplane-skin.dae</uri>
            </mesh>
         </geometry>
       </visual>

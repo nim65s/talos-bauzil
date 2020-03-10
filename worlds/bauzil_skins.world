@@ -32,7 +32,80 @@
       </include>
 
       <include>
-        <uri>model://bauzil_room_skins</uri>
+        <!-- <uri>model://bauzil_room_skins</uri> -->
+        <uri>model://bauzil_room</uri>
       </include>
+      <light name='spot_0' type='spot'>
+        <pose>3 0 6.5 0 0 0</pose>
+        <diffuse>0.8 0.8 0.8 1</diffuse>
+        <specular>0.2 0.2 0.2 1</specular>
+        <direction>0 0 -1</direction>
+        <attenuation>
+          <range>20</range>
+          <constant>0.25</constant>
+          <linear>0.01</linear>
+          <quadratic>0.001</quadratic>
+        </attenuation>
+        <cast_shadows>0</cast_shadows>
+        <spot>
+          <inner_angle>0.6</inner_angle>
+          <outer_angle>1</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+      </light>
+      <light name='spot_1' type='spot'>
+        <pose>-1 0 6.5 0 0 0</pose>
+        <diffuse>0.8 0.8 0.8 1</diffuse>
+        <specular>0.2 0.2 0.2 1</specular>
+        <direction>0 0 -1</direction>
+        <attenuation>
+          <range>200</range>
+          <constant>0.25</constant>
+          <linear>0.01</linear>
+          <quadratic>0</quadratic>
+        </attenuation>
+        <cast_shadows>1</cast_shadows>
+        <spot>
+          <inner_angle>0.6</inner_angle>
+          <outer_angle>1</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+      </light>
+      <light name='spot_2' type='spot'>
+        <pose >-5 0 6.5 0 0 0</pose>
+        <diffuse>0.8 0.8 0.8 1</diffuse>
+        <specular>0.2 0.2 0.2 1</specular>
+        <direction>0 0 -1</direction>
+        <attenuation>
+          <range>200</range>
+          <constant>0.25</constant>
+          <linear>0.01</linear>
+          <quadratic>0</quadratic>
+        </attenuation>
+        <cast_shadows>1</cast_shadows>
+        <spot>
+          <inner_angle>0.6</inner_angle>
+          <outer_angle>1</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+      </light>
+
+      <!-- add skin -->
+      <model name="estrade_skin">
+        <static>true</static>
+        <include>
+          <uri>model://airplane_skin</uri>
+        </include>
+        <pose>-7 0 0.63 -0.15 0.025 1.55</pose>
+      </model>
+
+      <!-- add offices skin -->
+      <model name="offices_skin">
+        <static>true</static>
+        <include>
+          <uri>model://airplane_skin</uri>
+        </include>
+        <pose>6.3 -3.4 0.01 -0.4 0.03 3.14</pose>
+      </model>
   </world>
 </sdf>
