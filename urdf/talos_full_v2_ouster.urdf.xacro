@@ -8,6 +8,10 @@
   To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to
   Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 -->
+<!--
+  Extracted from robotpkg-talos-data/robots.
+  Modified by T. Lasguignes, LAAS-CNRS.
+-->
 <robot name="talos" xmlns:xacro="http://ros.org/wiki/xacro"
         xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
         xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
@@ -18,7 +22,7 @@
   </xacro:if>
 
   <xacro:include filename="$(find talos_data)/urdf/torso/torso.urdf.xacro" />
-  <xacro:include filename="$(find talos_data)/urdf/head/head.urdf.xacro" />
+  <xacro:include filename="$(find talos_bauzil)/urdf/head/head_ouster.urdf.xacro" /> <!--modif-->
   <!--arm_v1 loadded because of the different joint range for 1st DoF-->
   <xacro:include filename="$(find talos_data)/urdf/arm/arm_v2.urdf.xacro" />
   <xacro:include filename="$(find talos_data)/urdf/sensors/ftsensor.urdf.xacro" />
@@ -41,7 +45,7 @@
     <xacro:crane parent="torso_2_link"/>
   </xacro:if>
 
-  <xacro:talos_head name="head" parent="torso_2_link"/>
+  <xacro:talos_head name="head" parent="torso_2_link" lid_samples="1024"/>
 
   <xacro:talos_arm name="arm" parent="torso_2_link" side="left" reflect="1"/>
   <xacro:talos_arm name="arm" parent="torso_2_link" side="right" reflect="-1"/>
@@ -59,11 +63,5 @@
   <xacro:include filename="$(find talos_data)/gazebo/gazebo.urdf.xacro" />
   <!-- Materials for visualization -->
   <xacro:include filename="$(find talos_data)/urdf/materials.urdf.xacro" />
-
-  <xacro:include filename="$(find ouster_os1_64)/urdf/os1_64.urdf.xacro"/>
-  <!-- noise:=0.0 means that the noise is calculated according to the datasheet -->
-  <os1_64 parent="head_2" name="os1" prefix="/os1_cloud_node" hz="10" samples="512" noise="0.0" gpu="true" reduced="false">
-    <origin xyz="0 0 0.275" rpy="0 0 0"/>
-  </os1_64>
 
 </robot>

@@ -8,6 +8,10 @@
   To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to
   Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 -->
+<!--
+  Extracted from robotpkg-talos-data/urdf/head.
+  Modified by T. Lasguignes, LAAS-CNRS.
+-->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
@@ -131,7 +135,10 @@
 
   </xacro:macro>
 
-  <xacro:macro name="talos_head" params="name parent">
+  <!--************************-->
+  <!--          Head          -->
+  <!--************************-->
+  <xacro:macro name="talos_head" params="name parent lid_samples:=512 lid_hz:=10">
     <xacro:talos_head_1 name="${name}_1" parent="${parent}" />
     <xacro:talos_head_2 name="${name}_2" parent="${name}_1_link"/>
     <xacro:orbbec_astra_pro name="rgbd" parent="${name}_2"> -->
@@ -145,7 +152,7 @@
                                                 jnt_reduction1="1.0" jnt_reduction2="2.0"
                                                 offset_value_1="${head_1_joint_offset}" offset_value_2="${head_2_joint_offset}"/>
     <!-- noise:=0.0 means that the noise is calculated according to the datasheet -->
-    <xacro:os1_64 parent="${name}_2" name="os1" prefix="/os1_cloud_node" hz="10" samples="512" noise="0.0" gpu="true" reduced="false">
+    <xacro:os1_64 parent="${name}_2" name="os1" prefix="/os1_cloud_node" hz="${lid_hz}" samples="${lid_samples}" noise="0.0" gpu="true" reduced="false">
       <origin xyz="0 0 0.275" rpy="0 0 0"/>
     </xacro:os1_64>
   </xacro:macro>
