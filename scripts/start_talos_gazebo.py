@@ -29,8 +29,8 @@ uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
 roslaunch.configure_logging(uuid)
 
 cli_args = [talos_bauzil_path+'/launch/script_talos_gazebo_bauzil.launch',
-            'world_name:=bauzil',
-            'robot:=full_v2_sensors_1',
+            'world_name:=bauzil_skins',
+            'robot:=full_v2_ouster',
             'enable_leg_passive:=false'
            ]
 roslaunch_args = cli_args[1:]
@@ -59,16 +59,6 @@ spawn_args = ['gzpose:='+gzpose]
 spawn_roslaunch = [(roslaunch.rlutil.resolve_launch_arguments(spawn_file)[0], spawn_args)]
 launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid,
                                                           spawn_roslaunch)
-# spawn_file = [talos_data_path+'/launch/talos_gazebo_spawn_hs.launch']
-# spawn_args = []
-# spawn_roslaunch = [(roslaunch.rlutil.resolve_launch_arguments(spawn_file)[0], spawn_args)]
-# launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid,
-#                                                           spawn_roslaunch)
-# spawn_file = [talos_data_path+'/launch/talos_gazebo_spawn_hs_wide.launch']
-# spawn_args = []
-# spawn_roslaunch = [(roslaunch.rlutil.resolve_launch_arguments(spawn_file)[0], spawn_args)]
-#launch_gazebo_spawn_hs = roslaunch.parent.ROSLaunchParent(uuid,
-#                                                          spawn_roslaunch)
 launch_gazebo_spawn_hs.start()
 rospy.loginfo("talos_spawn half-sitting started")
 
@@ -84,11 +74,11 @@ launch_bringup.start()
 rospy.loginfo("talos_bringup started")
 
 # Start sot
-# roscontrol_sot_talos_path=arospack.get_path('roscontrol_sot_talos')
-# launch_roscontrol_sot_talos =roslaunch.parent.ROSLaunchParent(uuid,
-#                                                               [roscontrol_sot_talos_path+'/launch/sot_talos_controller_gazebo.launch'])
-# launch_roscontrol_sot_talos.start()
-# rospy.loginfo("roscontrol_sot_talos started")
+roscontrol_sot_talos_path=arospack.get_path('roscontrol_sot_talos')
+launch_roscontrol_sot_talos =roslaunch.parent.ROSLaunchParent(uuid,
+                                                              [roscontrol_sot_talos_path+'/launch/sot_talos_controller_gazebo.launch'])
+launch_roscontrol_sot_talos.start()
+rospy.loginfo("roscontrol_sot_talos started")
 
 rospy.spin()
 
