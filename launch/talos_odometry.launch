@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <!-- Launch odometry node -->
+    <node name="talos_odom" pkg="talos_bauzil" type="odometry.py" />
+
+    <!-- Launch world info -->
+    <node name="world_publisher" pkg="talos_bauzil" type="publisher_world.py" />
+    
+</launch>
