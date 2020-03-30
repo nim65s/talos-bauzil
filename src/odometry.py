@@ -18,9 +18,12 @@ get_mod_srv = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
 
 
 odom = Odometry()
+headodom = Header()
+headodom.frame_id = '/world'
+
 posecova = PoseWithCovarianceStamped()
-head = Header()
-head.frame_id = '/base_link'
+headcova = Header()
+headcova.frame_id = '/base_link'
 
 model = GetModelStateRequest()
 model.model_name = 'talos'
@@ -32,12 +35,16 @@ while not rospy.is_shutdown():
 
     odom.pose.pose = state.pose
     odom.twist.twist = state.twist
+    odom.child_frame_id = '/base_link'
 
     posecova.pose.pose = state.pose
 
-    head.stamp = rospy.Time.now()
-    odom.header = head
-    posecova.header = head
+    stamp = rospy.Time.now()
+    headodom.stamp = stamp
+    headcova.stamp = stamp
+    
+    odom.header = headodom
+    posecova.header = headcova
 
     publisher.publish(odom)
     publisher_aicp.publish(posecova)
