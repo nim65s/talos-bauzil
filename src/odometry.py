@@ -23,7 +23,7 @@ headodom.frame_id = '/world'
 
 posecova = PoseWithCovarianceStamped()
 headcova = Header()
-headcova.frame_id = '/base_link'
+headcova.frame_id = '/world'
 
 model = GetModelStateRequest()
 model.model_name = 'talos'
