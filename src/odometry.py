@@ -28,7 +28,7 @@ headcova.frame_id = '/world'
 model = GetModelStateRequest()
 model.model_name = 'talos'
 
-watch = rospy.Rate(2)
+watch = rospy.Rate(10)
 
 while not rospy.is_shutdown():
     state = get_mod_srv(model)
