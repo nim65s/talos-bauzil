@@ -4,7 +4,7 @@ import rospy
 import tf
 from gazebo_msgs.srv import GetModelState, GetModelStateRequest
 
-rospy.init_node('world.pub')
+rospy.init_node('world_pub')
 
 publisher = tf.TransformBroadcaster()
 
