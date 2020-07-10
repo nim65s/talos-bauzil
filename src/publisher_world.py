@@ -25,4 +25,8 @@ while not rospy.is_shutdown():
                             "base_link",
                             "world")
 
-    watch.sleep()
+    try:
+        watch.sleep()
+    except rospy.ROSInterruptException:
+        rospy.logwarn("%s stopped in 'watch.sleep()'.", rospy.get_name())
+        exit()

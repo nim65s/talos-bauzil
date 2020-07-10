@@ -49,4 +49,8 @@ while not rospy.is_shutdown():
     publisher.publish(odom)
     publisher_aicp.publish(posecova)
 
-    watch.sleep()
+    try:
+        watch.sleep()
+    except rospy.ROSInterruptException:
+        rospy.logwarn("%s stopped in 'watch.sleep()'.", rospy.get_name())
+        exit()
