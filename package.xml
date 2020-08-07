@@ -15,5 +15,7 @@
   <build_depend>rospy</build_depend>
   <build_export_depend>rospy</build_export_depend>
   <exec_depend>rospy</exec_depend>
+  <exec_depend>ouster_os1_64</exec_depend>
+  <exec_depend>ouster_gazebo_plugins</exec_depend>
 
 </package>
