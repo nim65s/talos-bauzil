@@ -19,7 +19,7 @@
   <xacro:include filename="$(find talos_data)/urdf/head/head.transmission.xacro" />
   <xacro:include filename="$(find talos_data)/urdf/sensors/orbbec_astra_pro.urdf.xacro" />
   <xacro:include filename="$(find talos_description_calibration)/urdf/calibration/calibration_constants.urdf.xacro" />
-  <xacro:include filename="$(find ouster_os1_64)/urdf/os1_64.urdf.xacro" />
+  <xacro:include filename="$(find talos_bauzil)/urdf/os1_64.urdf.xacro" />
 
   <!--Constant parameters-->
   <xacro:property name="head_friction" value="1.0" />
